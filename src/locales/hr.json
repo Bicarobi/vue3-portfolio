@@ -1,0 +1,233 @@
+{
+    "welcomeView": {
+        "text1": "Hej! Ja sam",
+        "text2": "Dobro došli na moj portfolio!",
+        "text3": {
+            "1": "Saznaj više o meni ",
+            "2": "ispod!",
+            "3": "iznad!"
+        }
+    },
+    "navBar": {
+        "about": "O Meni",
+        "resume": "Rezime",
+        "portfolio": "Portfolio"
+    },
+    "profile": {
+        "location": "lokacija",
+        "location2": "Hrvatska",
+        "phone": "mobitel",
+        "skills": {
+            "webDev": "Web Programer",
+            "design3D": "3D Dizajner",
+            "webDesign": "Web Dizajner",
+            "graphicDesign": "Grafički Dizajner"
+        }
+    },
+    "aboutView": {
+        "text1": "Nakon završetka Elektrostrojarske Škole za Tehničara za Računalstvo, trenutno sam student na Sveučilištu Sjever, gdje sam postigao titulu prvostupnika inženjera multimedijske i grafičke tehnologije (bacc. ing. techn. graph.). Nastavljam svoje obrazovanje na diplomskom studiju Multimedija. Odabrao sam ovaj smjer zbog svoje strasti prema programiranju i povezivanju grafičkog dizajna s funkcionalnošću. Posebno sam zainteresiran za frontend i backend development jer smatram da su to područja koja oblikuju budućnost.",
+        "text2": "Trenutno istražujem i razvijam web stranice pomoću Vue.js-a za frontend i Nest.js-a za backend. Osim toga, volim istraživati i angažirati se u drugim područjima programiranja, poput izrade video igara koristeći Python ili C#. Zanima me detaljno proučavanje svakog koraka u procesu razvoja projekta kako bih stekao znanje i vještine za samostalnu izradu većih projekata. U budućnosti, ciljam integrirati alate umjetne inteligencije izravno u web stranice, omogućujući korisnicima unos sadržaja putem promptova.",
+        "doing": "Moje Vještine",
+        "skills": {
+            "webDev": {
+                "title": "razvoj web stranica",
+                "desc": "Izrada kompletnih web stranica koristeći Vue.js i Nest.js"
+            },
+            "webDesign": {
+                "title": "dizajn web stranica",
+                "desc": "Izrada dizajna i prototypea web stranica i aplikacija u Figmi"
+            },
+            "graphicDesign": {
+                "title": "grafički dizajn",
+                "desc": "Izrada raznih vrsta grafičkog dizajna u Adobe Illustrator i Photoshop"
+            },
+            "design3D": {
+                "title": "3d dizajn",
+                "desc": "Izrada dizajna interijera i eksterijera, kao i izradu velikih scena, koristeći Blender"
+            },
+            "photo": {
+                "title": "fotografija",
+                "desc": "Fotografiranje i izrada albuma, koristeći Adobe Lightroom i InDesign"
+            }
+        }
+    },
+    "resumeView": {
+        "education": "Obrazovanje",
+        "experience": "Iskustvo",
+        "eduInfo": {
+            "info1": {
+                "title": "Sveučilište Sjever Varaždin - Diplomski studij - Multimedija",
+                "time": "2023 — trenutno",
+                "desc": "Trenutno se fokusiramo na izradu frontend dijela web stranica u okviru trenutnog studija, s planom da uključimo i razvoj backend dijela. Također, bavimo se grafičkim programiranjem u Processing-u koristeći programski jezik Java."
+            },
+            "info2": {
+                "title": "Sveučilište Sjever Varaždin - Preddiplomski studij - Multimedija, oblikovanje i primjena",
+                "time": "2020 — 2023",
+                "desc": "Tijekom preddiplomskog studija, imao sam priliku upoznati se s teorijom i praktičnom primjenom grafičkog dizajna na raznim web stranicama, aplikacijama i vrstama medija, te sam aktivno sudjelovao u procesu njihove izrade od početka do kraja. Paralelno s tim, sam se bavio sa frontend i backend programiranjem, kako na studiju tako i u slobodno vrijeme. Iako je moj završni rad bio fokusiran na 3D modeliranje i 3D printanje, to nije narušilo moju strast prema (web) programiranju."
+            },
+            "info3": {
+                "title": "Elektrostrojarska Škola Varaždin - Tehničar za računalstvo",
+                "time": "2016 — 2020",
+                "desc": "Kroz srednjoškolsko obrazovanje stekao sam značajno znanje o raznim programskim jezicima, algoritmima i metodama programiranja. Također sam razvio duboko razumijevanje hardvera računala i uređaja, te načina na koje softver interaktira s njima. Moje obrazovanje obuhvatilo je i servisiranje i programiranje računalnih servera. Poseban naglasak bio je na razvoju računalnih programa i mobilnih aplikacija korištenjem jezika poput C# i Java, te na izradi web stranica. Kao dio završnog rada, kreirao sam video igru koristeći Python u Game Engine-u Godot."
+            }
+        },
+        "workInfo": {
+            "info1": {
+                "title": "Prolink",
+                "time": "2023 — 2024",
+                "desc": "U tvrtci Prolink sam imao priliku samostalno sudjelovati u raznim značajnim projektima, uključujući kreiranje i dizajniranje trgovina Lesnine XXXL i Mömax. Također, samostalno sam kreirao 300 scena za aplikaciju Autoškola Rusan, koju mjesečno koristi 40 tisuća korisnika. Nedavno sam radio na projektima koji su obuhvaćali uređenje interijera i eksterijera različitih apartmana i stambenih zgrada, te izradu animacije u medicinske svrhe."
+            }
+        },
+        "skills": {
+            "mySkills": "Znanje",
+            "type": {
+                "design3D": "3D Dizajn",
+                "webDev": "Razvoj Web Stranica",
+                "webDesign": "Dizajn Web Stranica",
+                "graphicDesign": "Grafički Dizajn",
+                "printing3D": "3D Printanje",
+                "videoEditing": "Video Editiranje",
+                "photo": "Fotografija"
+            }
+        }
+    },
+    "portfolioView": {
+        "skills": {
+            "all": "Sve",
+            "webDev": "Razvoj Web Stranica",
+            "appDev": "Razvoj Aplikacija",
+            "webDesign": "Dizajn Web Stranica",
+            "appDesign": "Dizajn Mobilnih Aplikacija",
+            "graphicDesign": "Grafički Dizajn",
+            "design3D": "3D Dizajn",
+            "photo": "Fotografija"
+        },
+        "works": {
+            "webDev": {
+                "type": "Razvoj Web Stranica",
+                "work1": {
+                    "title": "Tasker",
+                    "desc": "Tasker je online platforma za upravljanje zadacima s intuitivnim sučeljem.\n Izrađena koristeći Vue.js za frontend i Nest.js za backend."
+                },
+                "work2": {
+                    "title": "Musiker",
+                    "desc": "Musiker je online platforma koja omogućuje korisnicima da učitavaju i pretražuju pjesme sa Spotifya. \nIzrađena je korištenjem Vue.js za frontend, Spotify Web API za dohvaćanje podataka i Spotify iFrame API za reprodukciju pjesama."
+                },
+                "work3": {
+                    "title": "HDLU Varaždin",
+                    "desc": "Izrada web stranice za Hrvatsku Udrugu Likovnih Umjetnika Varaždin u sklopu natjecanja. \nIzrađena je koristeći Vue.js za frontend i Wordpress CMS za backend."
+                },
+                "work4": {
+                    "title": "Dasher",
+                    "desc": "Dasher je primjer dizajna i funkcionalnosti dashboard web stranice za upravljanje zaposlenicima.\n Izrađena je koristeći Angular za frontend."
+                }
+            },
+            "appDev": {
+                "type": "Razvoj Aplikacija",
+                "work1": {
+                    "title": "Cordova E-Čitač",
+                    "desc": "Cordova E-Čitač je web aplikacija koja omogućuje otvaranje i čitanje e-knjiga u .epub i .mobi formatima s opcijom prilagodbe teksta, uz intuitivno sučelje."
+                },
+                "work2": {
+                    "title": "3D Snake",
+                    "desc": "3D Snake je verzija klasične igre Snake u tri dimenzije. \nIzrađena je koristeći Processing i Java programski jezik."
+                }
+            },
+            "webDesign": {
+                "type": "Dizajn Web Stranica",
+                "work1": {
+                    "title": "Prethodni Portfolio",
+                    "desc": "Izrada dizajna i prototypea u Figmi za jednostavan portfolio minimalističkog stila."
+                },
+                "work2": {
+                    "title": "Don't Waste. Donate.",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju organizaciju koja se bavi rješavanjem viška hrane."
+                },
+                "work3": {
+                    "title": "Wag",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju aplikaciju koja omogućuje korisnicima da zatraže ili ponude uslugu šetanja pasa."
+                }
+            },
+            "design3D": {
+                "type": "3D Dizajn",
+                "work1": {
+                    "title": "Kupaonica",
+                    "desc": "Samostalna izrada i dizajn kupaonice prema slici."
+                },
+                "work2": {
+                    "title": "Detalji Kupaonice",
+                    "desc": "Samostalna izrada i dizajn detalja kupaonice prema slici."
+                },
+                "work3": {
+                    "title": "Moderna Turistička Kuća Na Moru",
+                    "desc": "Samostalna izrada i dizajn turističke kuće na moru modernijeg stila, u Blenderu."
+                },
+                "work4": {
+                    "title": "Stambena Zgrada",
+                    "desc": "Samostalna izrada i dizajn stambene zgrade u Blenderu."
+                },
+                "work5": {
+                    "title": "Turistička Kuća",
+                    "desc": "Samostalna izrada i dizajn turističke kuće u Blenderu."
+                },
+                "work6": {
+                    "title": "Lesnina XXXL i Mömax",
+                    "desc": "Samostalna izrada i dizajn nove trgovine Lesnine XXXL i MömaX u Blenderu."
+                },
+                "work7": {
+                    "title": "Kuća Na Moru",
+                    "desc": "Samostalna izrada i dizajn kuće na moru u Blenderu."
+                },
+                "work8": {
+                    "title": "Moderna Kuća Na Moru",
+                    "desc": "Samostalna izrada i dizajn kuće na moru modernijeg stila, u Blenderu."
+                },
+                "work9": {
+                    "title": "Autoškola Rusan",
+                    "desc": "Samostalna izrada 300 3D scena u Blenderu za aplikaciju Autoškola Rusan koju posjećuje oko 40 tisuća korisnika mjesečno."
+                }
+            },
+            "appDesign": {
+                "type": "Dizajn Mobilnih Aplikacija",
+                "work1": {
+                    "title": "Wag",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju aplikaciju koja omogućuje korisnicima da zatraže ili ponude uslugu šetanja pasa."
+                },
+                "work2": {
+                    "title": "Unin Šetnja",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju aplikaciju koja olakšava studentima pronalaženje i pregled profesora i predavaonica, uz mogućnost pristupa rasporedu svih studija na jednom mjestu."
+                },
+                "work3": {
+                    "title": "EcoCompass",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju aplikaciju koja olakšava korisnicima pretraživanje simbola za recikliranje putem AR skeniranja. Također pruža pregled rasporeda odvoza otpada."
+                }
+            },
+            "graphicDesign": {
+                "type": "Grafički Dizajn",
+                "work1": {
+                    "title": "Don't Waste. Donate",
+                    "desc": "Izrada dizajna i prototypea u Figmi za izmišljenju organizaciju koja se bavi rješavanjem viška hrane."
+                },
+                "work2": {
+                    "title": "Wake Up Energetsko Piće",
+                    "desc": "Izrada dizajna u Adobe Illustratoru i Blenderu za izmišljenji energetski napitak."
+                },
+                "work3": {
+                    "title": "O Meni",
+                    "desc": "Izrada dizajna brošure u Adobe Illustratoru i Adobe InDesignu koja sadrži sve prethodne radove."
+                },
+                "work4": {
+                    "title": "Mt. Fuji",
+                    "desc": "Izrada dizajna brošure u Adobe Illustratoru i Adobe InDesignu za atrakciju planine Fuji."
+                }
+            },
+            "photo": {
+                "type": "Fotografija",
+                "work1": {
+                    "title": "The Archive",
+                    "desc": "Izrada dizajna časopisa u Adobe Lightroomu, Adobe Illustratoru i Adobe InDesignu koja tematski sadrži sve slike projektni zadatak."
+                }
+            }
+        }
+    }
+}

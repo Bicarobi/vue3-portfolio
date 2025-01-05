@@ -1,0 +1,90 @@
+.about-container {
+	width: 100%;
+	height: 100%;
+	padding: 0px 80px 30px 80px;
+
+	@media #{$tablet} {
+		padding: 20px 20px 20px 20px;
+	}
+
+	@media #{$mobile} {
+		padding: 30px 30px 30px 30px;
+	}
+
+	> .current-page-container {
+		width: fit-content;
+
+		> .current-page {
+			font-size: 2rem;
+			color: var(--color1);
+			text-transform: capitalize;
+			font-weight: bold;
+			width: fit-content;
+
+			@media #{$mobile} {
+				font-size: 26px;
+			}
+		}
+
+		> .nav-line {
+			width: 100%;
+			border-radius: 15px;
+			border: solid 3px var(--color2);
+			margin: 0px 0px 50px 0px;
+		}
+	}
+
+	> .grid-container {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: auto;
+		grid-template-areas: "left-side right-side";
+
+		gap: 20px;
+
+		@media #{$tablet} {
+			grid-template-columns: 1fr;
+			grid-template-areas: "left-side" "right-side";
+		}
+
+		> .grid-left-side {
+			grid-area: left-side;
+
+			> .text-container {
+				margin: 0px 0px 50px 0px;
+
+				font-size: $font-size-desktop;
+				text-align: justify;
+				color: var(--color1);
+
+				@media #{$tablet} {
+					margin: 0px 0px 20px 0px;
+				}
+
+				@media #{$mobile} {
+					margin: 0px 0px 20px 0px;
+				}
+			}
+		}
+
+		> .grid-right-side {
+			grid-area: right-side;
+
+			> .doing-container {
+				text-align: justify;
+				color: var(--color1);
+
+				> .card-container {
+					width: 100%;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: 10px;
+				}
+			}
+		}
+	}
+}

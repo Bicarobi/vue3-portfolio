@@ -1,0 +1,233 @@
+{
+    "welcomeView": {
+        "text1": "Hey! I'm",
+        "text2": "Welcome to my portfolio!",
+        "text3": {
+            "1": "Check more about me ",
+            "2": "below!",
+            "3": "above!"
+        }
+    },
+    "navBar": {
+        "about": "About",
+        "resume": "Resume",
+        "portfolio": "Portfolio"
+    },
+    "profile": {
+        "location": "location",
+        "location2": "Croatia",
+        "phone": "phone",
+        "skills": {
+            "webDev": "Web Developer",
+            "design3D": "3D Designer",
+            "webDesign": "Web Designer",
+            "graphicDesign": "Graphic Designer"
+        }
+    },
+    "aboutView": {
+        "text1": "After graduating from the School of Electrical Engineering for Computer Technicians, I am currently a student at the University of the North, where I obtained a bachelor's degree in multimedia and graphic technology engineering (bacc. ing. tech. graph.). I am continuing my education at the graduate study in Multimedia. I chose this major because of my passion for programming and connecting graphic design with functionality. I am particularly interested in frontend and backend development because I believe that these are areas that shape the future.",
+        "text2": "I am currently exploring and developing websites using Vue.js for the frontend and Nest.js for the backend. Additionally, I enjoy exploring and engaging in other areas of programming, such as creating video games using Python or C#. I am interested in thoroughly studying each step of the project development process to gain knowledge and skills for independently creating larger projects. In the future, my goal is to integrate artificial intelligence tools directly into websites, enabling users to input content through prompts.",
+        "doing": "What I'm Doing",
+        "skills": {
+            "webDev": {
+                "title": "web development",
+                "desc": "Creating complete websites using Vue.js and Nest.js"
+            },
+            "webDesign": {
+                "title": "web design",
+                "desc": "Design and prototyping of websites and applications in Figma"
+            },
+            "graphicDesign": {
+                "title": "graphic design",
+                "desc": "Creating various types of graphic designs in Adobe Illustrator and Photoshop"
+            },
+            "design3D": {
+                "title": "3d design",
+                "desc": "Creating interior and exterior designs, as well as producing large-scale scenes, using Blender and Adobe Substance Painter"
+            },
+            "photo": {
+                "title": "photography",
+                "desc": "Photography and album creation using Adobe Lightroom and InDesign"
+            }
+        }
+    },
+    "resumeView": {
+        "education": "Education",
+        "experience": "Experience",
+        "eduInfo": {
+            "info1": {
+                "title": "Sveučilište Sjever Varaždin - Master's degree - Multimedia",
+                "time": "2023 — present",
+                "desc": "We are currently focusing on developing the frontend part of websites as part of our current study, with plans to incorporate backend development as well. Additionally, we are engaged in graphical programming in Processing using the Java programming language."
+            },
+            "info2": {
+                "title": "Sveučilište Sjever Varaždin - Bachelor's degree - Multimedia, design and application",
+                "time": "2020 — 2023",
+                "desc": "During my undergraduate studies, I had the opportunity to familiarize myself with the theory and practical application of graphic design across various websites, applications, and media types, actively participating in their creation process from start to finish. Concurrently, I engaged in both frontend and backend programming, both within my studies and in my free time. Although my final project focused on 3D modeling and 3D printing, it did not diminish my passion for (web) programming."
+            },
+            "info3": {
+                "title": "Elektrostrojarska Škola Varaždin - Computer technician",
+                "time": "2016 — 2020",
+                "desc": "Troughout my high school education, I gained extensive knowledge and a solid understanding of various programming languages, algorithms, and programming paradigms. Additionally, I acquired insights into computer hardware and devices, as well as how software interfaces with and communicates with them. I also delved into the servicing and programming of computer servers. A significant portion of my studies focused on developing computer programs and mobile applications using languages such as C# and Java, alongside website development. My culminating project involved creating a video game using Python within the Godot Game Engine."
+            }
+        },
+        "workInfo": {
+            "info1": {
+                "title": "Prolink",
+                "time": "2023 — 2024",
+                "desc": "During my time at Prolink, I had the opportunity to independently work on various significant projects such as the creation and design of Lesnina XXXL and Mömax stores. Additionally, I autonomously developed 300 scenes for the Autoškola Rusan application, which is utilized by 40 thousand users monthly. My recent projects have revolved around interior and exterior design for various apartments and residential buildings, as well as the creation of animation for medical purposes."
+            }
+        },
+        "skills": {
+            "mySkills": "My Skills",
+            "type": {
+                "design3D": "3D Design",
+                "webDev": "Web Development",
+                "webDesign": "Web Design",
+                "graphicDesign": "Graphic Design",
+                "printing3D": "3D Printing",
+                "videoEditing": "Video Editing",
+                "photo": "Photography"
+            }
+        }
+    },
+    "portfolioView": {
+        "skills": {
+            "all": "All",
+            "webDev": "Web Development",
+            "appDev": "App Development",
+            "webDesign": "Web Design",
+            "graphicDesign": "Graphic Design",
+            "appDesign": "App Design",
+            "design3D": "3D Design",
+            "photo": "Photography"
+        },
+        "works": {
+            "webDev": {
+                "type": "Web Development",
+                "work1": {
+                    "title": "Tasker",
+                    "desc": "Tasker is an online task management platform with an intuitive interface. \nBuilt using Vue.js for the frontend and Nest.js for the backend."
+                },
+                "work2": {
+                    "title": "Musiker",
+                    "desc": "Musiker is an online platform that enables users to upload and search for songs from Spotify. It's developed using Vue.js for the frontend, Spotify Web API for data retrieval, and Spotify iFrame API for song playback."
+                },
+                "work3": {
+                    "title": "HDLU Varaždin",
+                    "desc": "Creating a website for the Croatian Association of Visual Artists Varaždin as part of a competition. \nIt was made using Vue.js for the frontend and WordPress CMS for the backend."
+                },
+                "work4": {
+                    "title": "Dasher",
+                    "desc": "Dasher is an example of the design and functionality of a dashboard website for employee management.\n It was built using Angular for the frontend."
+                }
+            },
+            "appDev": {
+                "type": "App Development",
+                "work1": {
+                    "title": "Cordova E-Reader",
+                    "desc": "Cordova E-Reader is a web application that enables opening and reading e-books in .epub and .mobi formats with text customization options, alongside an intuitive interface."
+                },
+                "work2": {
+                    "title": "3D Snake",
+                    "desc": "3D Snake is a version of the classic Snake game in three dimensions. \nIt was made using Processing and the Java programming language."
+                }
+            },
+            "webDesign": {
+                "type": "Web Design",
+                "work1": {
+                    "title": "Old Portfolio",
+                    "desc": "Design and prototype creation in Figma for a simple portfolio of minimalist style."
+                },
+                "work2": {
+                    "title": "Don't Waste. Donate.",
+                    "desc": "Design and prototype creation in Figma for inventing an organization dealing with surplus food redistribution."
+                },
+                "work3": {
+                    "title": "Wag",
+                    "desc": "Design and prototype creation in Figma for inventing an application that enables users to request or offer dog walking services."
+                }
+            },
+            "design3D": {
+                "type": "3D Design",
+                "work1": {
+                    "title": "Bathroom",
+                    "desc": "Independent creation and design of a bathroom based on an image."
+                },
+                "work2": {
+                    "title": "Bathroom Details",
+                    "desc": "Independent creation and design of a bathroom details based on an image."
+                },
+                "work3": {
+                    "title": "Modern Seaside Vacation House",
+                    "desc": "Independent creation and design of a modern-style seaside vacation home in Blender."
+                },
+                "work4": {
+                    "title": "Residential building",
+                    "desc": "Independent creation and design of a residential building in Blender."
+                },
+                "work5": {
+                    "title": "Touristic House",
+                    "desc": "Independent creation and design of a tourist house in Blender."
+                },
+                "work6": {
+                    "title": "Lesnina XXXL and Mömax",
+                    "desc": "Independent creation and design of the new Lesnina XXXL and MömaX stores in Blender."
+                },
+                "work7": {
+                    "title": "Seaside House",
+                    "desc": "Independent creation and design of a seaside house in Blender."
+                },
+                "work8": {
+                    "title": "Modern Seaside House",
+                    "desc": "Independent creation and design of a modern-style seaside house in Blender."
+                },
+                "work9": {
+                    "title": "Autoschool Rusan",
+                    "desc": "Independent creation of 300 3D scenes in Blender for the Autoškola Rusan application, which is visited by around 40 thousand users monthly."
+                }
+            },
+            "appDesign": {
+                "type": "App Design",
+                "work1": {
+                    "title": "Wag",
+                    "desc": "Design and prototype creation in Figma for inventing an application that enables users to request or offer dog walking services."
+                },
+                "work2": {
+                    "title": "Unin Walk",
+                    "desc": "Designing and prototyping in Figma for inventing an application that facilitates students in finding and reviewing professors and lecture halls, with the ability to access the schedule of all courses in one place."
+                },
+                "work3": {
+                    "title": "EcoCompass",
+                    "desc": "Design and prototyping in Figma for inventing an application that facilitates users in searching for recycling symbols through AR scanning. It also provides an overview of waste collection schedules."
+                }
+            },
+            "graphicDesign": {
+                "type": "Graphic Design",
+                "work1": {
+                    "title": "Don't Waste. Donate",
+                    "desc": "Design and creation in Figma and Adobe Photoshop for inventing an organization dealing with surplus food redistribution."
+                },
+                "work2": {
+                    "title": "Wake Up Energy Drink",
+                    "desc": "Design in Adobe Illustrator and Blender for a fictional energy drink."
+                },
+                "work3": {
+                    "title": "About Me",
+                    "desc": "Creating a brochure design in Adobe Illustrator and Adobe InDesign that includes all previous works."
+                },
+                "work4": {
+                    "title": "Mt. Fuji",
+                    "desc": "Designing a brochure in Adobe Illustrator and Adobe InDesign for the attraction of Mount Fuji."
+                }
+            },
+            "photo": {
+                "type": "Photography",
+                "work1": {
+                    "title": "The Archive",
+                    "desc": "Designing a magazine layout in Adobe Lightroom, Adobe Illustrator, and Adobe InDesign that thematically incorporates all project assignment images."
+                }
+            }
+        }
+    }
+}

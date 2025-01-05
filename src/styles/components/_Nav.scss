@@ -1,0 +1,95 @@
+.nav-grid-container {
+	display: grid;
+	grid-template-columns: 5fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "left-side right-side";
+	justify-items: end;
+
+	width: 79%;
+
+	background-color: var(--color6);
+
+	position: fixed;
+	top: 0;
+	right: 0;
+
+	z-index: 10;
+
+	@media #{$mobile} {
+		top: auto;
+		right: auto;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		background-color: var(--color7);
+		gap: 5px;
+		padding: 0 20px;
+		box-shadow: 0px -4px 18px #00000030;
+	}
+
+	> .nav-grid-left-side {
+		grid-area: left-side;
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+
+		font-size: 16px;
+
+		@media #{$mobile} {
+			white-space: nowrap;
+			gap: 0;
+			justify-content: space-evenly;
+		}
+
+		> a {
+			font-weight: bold;
+			color: var(--color1);
+			text-decoration: none;
+		}
+
+		> a.router-link-exact-active {
+			color: var(--color2);
+		}
+	}
+
+	> .nav-grid-right-side {
+		grid-area: right-side;
+		width: fit-content;
+		height: 60px;
+		padding-right: 40px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		@media #{$mobile} {
+			gap: 10px;
+			padding-right: 0px;
+		}
+
+		> .locale-changer {
+			select {
+				background-color: var(--color13);
+
+				border: none;
+				border-radius: 20px;
+				padding: 3px 5px;
+			}
+		}
+
+		> .theme-switch-container {
+			> img {
+				width: auto;
+				height: var(--icon-size);
+
+				cursor: pointer;
+			}
+		}
+	}
+}

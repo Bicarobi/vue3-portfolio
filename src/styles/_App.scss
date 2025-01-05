@@ -1,0 +1,53 @@
+#app > .grid-container {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: auto;
+	grid-template-areas: "left-side right-side";
+
+	@media #{$tablet} {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: "left-side right-side";
+	}
+
+	@media #{$mobile} {
+		grid-template-columns: 1fr;
+		grid-template-areas: "left-side" "right-side";
+	}
+
+	> .grid-right-side {
+		grid-area: right-side;
+		height: 100%;
+		margin-top: 100px;
+
+		@media #{$mobile} {
+			height: fit-content;
+
+			background-color: var(--color7);
+			border-radius: 15px;
+			margin: 20px 10px 0px 10px;
+		}
+	}
+
+	> .grid-left-side {
+		grid-area: left-side;
+
+		height: fit-content;
+		width: 20%;
+		height: 100%;
+		position: fixed;
+
+		@media #{$tablet} {
+			width: 30%;
+			z-index: 20;
+		}
+
+		@media #{$mobile} {
+			position: relative;
+			width: fit-content;
+			max-width: 100%;
+			border-radius: 15px;
+			background-color: var(--color7);
+			margin: 10px;
+		}
+	}
+}

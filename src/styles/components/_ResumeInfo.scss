@@ -1,0 +1,39 @@
+.resume-info-container {
+	display: flex;
+	color: var(--color1);
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 40px;
+
+	padding-left: 40px;
+
+	@media #{$mobile} {
+		padding: 0;
+		margin-bottom: 30px;
+	}
+
+	> .resume-info-title {
+		font-size: 1.5em;
+
+		@media #{$mobile} {
+			font-size: 18px;
+		}
+	}
+
+	> .resume-info-time {
+		color: var(--color2);
+
+		font-size: 1em;
+	}
+
+	> .resume-info-desc {
+		font-size: 1.2em;
+		color: $gray5;
+		text-align: justify;
+
+		@media #{$mobile} {
+			font-size: 16px;
+		}
+	}
+}
