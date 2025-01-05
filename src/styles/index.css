@@ -1033,20 +1033,31 @@
   color: #fff;
   padding: 0 10%;
 }
-.work-card-container > .modal > .text-container > a {
+.work-card-container > .modal > .text-container > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.work-card-container > .modal > .text-container > div > a {
   text-decoration: none;
 }
-.work-card-container > .modal > .text-container > a :hover {
+.work-card-container > .modal > .text-container > div > a :hover {
   text-decoration: underline;
 }
-.work-card-container > .modal > .text-container .title {
+.work-card-container > .modal > .text-container > div > a > div {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.work-card-container > .modal > .text-container > div .title {
   margin-top: 20px;
   margin-bottom: 10px;
   color: var(--color2);
   font-size: 1.3em;
 }
 @media (max-width: 700px) {
-  .work-card-container > .modal > .text-container .title {
+  .work-card-container > .modal > .text-container > div .title {
     margin-top: 20px;
   }
 }

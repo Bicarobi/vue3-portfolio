@@ -15,7 +15,7 @@
             <router-link :to="{ name: 'portfolio', params: { filter: 'photography' } }">{{ $t("portfolioView.skills.photo") }}</router-link>
         </div>
         <hr class="line" />
-        <div class="works-container"><WorkCard v-for="work in filterWorks(processedWorks)" :key="work.title + work.type" :title="work.title" :type="work.type" :desc="work.desc" :img="work.img" :link="work.link" :filter="work.filter" /></div>
+        <div class="works-container"><WorkCard v-for="work in filterWorks(processedWorks)" :key="work.title + work.type" :title="work.title" :type="work.type" :desc="work.desc" :img="work.img" :link="work.link" :githubLink="work.githubLink" :filter="work.filter" /></div>
     </div>
 </template>
 
@@ -46,6 +46,7 @@ const processedWorks = computed(() => {
             desc: t("portfolioView.works.webDev.work3.desc"),
             img: ["web-dev/work3/web-dev-hdlu-8.png", "web-dev/work3/web-dev-hdlu-7.png", "web-dev/work3/web-dev-hdlu-9.png", "web-dev/work3/web-dev-hdlu-10.png", "web-dev/work3/web-dev-hdlu-11.png", "web-dev/work3/web-dev-hdlu-12.png", "web-dev/work3/web-dev-hdlu-13.png", "web-dev/work3/web-dev-hdlu-14.png", "web-dev/work3/web-dev-hdlu-2.jpg", "web-dev/work3/web-dev-hdlu-1.jpg", "web-dev/work3/web-dev-hdlu-3.jpg", "web-dev/work3/web-dev-hdlu-4.jpg", "web-dev/work3/web-dev-hdlu-5.jpg", "web-dev/work3/web-dev-hdlu-6.jpg"],
             link: "https://hdluvz-no-wp.vercel.app/",
+            githubLink: "https://github.com/Bicarobi/hdluvz-no-wp",
             filter: "web-dev",
         },
         {
@@ -54,6 +55,7 @@ const processedWorks = computed(() => {
             desc: t("portfolioView.works.webDev.work1.desc"),
             img: ["web-dev/work1/web-dev-tasker-1.png", "web-dev/work1/web-dev-tasker-2.png", "web-dev/work1/web-dev-tasker-3.jpeg", "web-dev/work1/web-dev-tasker-4.jpeg"],
             link: "https://tasker-task-management.vercel.app",
+            githubLink: "https://github.com/Bicarobi/task-management-frontend-vue",
             filter: "web-dev",
         },
         {
@@ -62,6 +64,7 @@ const processedWorks = computed(() => {
             desc: t("portfolioView.works.webDev.work4.desc"),
             img: ["web-dev/work4/web-dev-dasher-2.png", "web-dev/work4/web-dev-dasher-1.jpg"],
             link: "",
+            githubLink: "https://github.com/Bicarobi/dasher",
             filter: "web-dev",
         },
         {
@@ -70,6 +73,7 @@ const processedWorks = computed(() => {
             desc: t("portfolioView.works.webDev.work2.desc"),
             img: ["web-dev/work2/web-dev-musiker-1.png", "web-dev/work2/web-dev-musiker-2.jpg"],
             link: "https://musiker-spotify.vercel.app",
+            githubLink: "https://github.com/Bicarobi/vue-spotify",
             filter: "web-dev",
         },
         {
@@ -78,6 +82,7 @@ const processedWorks = computed(() => {
             desc: t("portfolioView.works.appDev.work1.desc"),
             img: ["app-dev/work1/app-dev-cordova-ereader-1.png", "app-dev/work1/app-dev-cordova-ereader-2.png", "app-dev/work1/app-dev-cordova-ereader-3.png"],
             link: "https://drive.google.com/file/d/1fsNLheLSPQZ4z9KON3gwHG6qMLEZsqqo/view?usp=sharing",
+            githubLink: "https://github.com/Bicarobi/eReader-Cordova",
             filter: "app-dev",
         },
         {

@@ -24,10 +24,13 @@
             />
             <div class="text-container" :style="expanded ? 'display: none' : 'display: flex'">
                 <div class="number">{{ index + 1 + " / " + img.length }}</div>
-                <a v-if="link" :href="link" target="_blank"
-                    ><div class="title">{{ title }}</div></a
-                >
-                <div v-else class="title">{{ title }}</div>
+                <div>
+                    <a v-if="link" :href="link" target="_blank"
+                        ><div class="title">{{ title }}</div></a
+                    >
+                    <div v-else class="title">{{ title }}</div>
+                    <a v-if="githubLink" :href="githubLink" target="_blank"><GitHubIcon></GitHubIcon></a>
+                </div>
                 <div class="desc">{{ desc }}</div>
             </div>
             <LeftArrowIcon @click="changeImage(-1)" /><RightArrowIcon @click="changeImage(1)" /><CloseIcon @click="showDesc(true, false), expandImage(false)" /><ExpandIcon @click="expandImage" :expanded="expanded" />
@@ -37,10 +40,12 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+
 import LeftArrowIcon from "../components/svgs/LeftArrowIcon.vue";
 import RightArrowIcon from "../components/svgs/RightArrowIcon.vue";
 import CloseIcon from "../components/svgs/CloseIcon.vue";
 import ExpandIcon from "../components/svgs/ExpandIcon.vue";
+import GitHubIcon from "./svgs/GitHubIcon.vue";
 
 const props = defineProps({
     title: String,
@@ -48,6 +53,7 @@ const props = defineProps({
     desc: String,
     img: Array,
     link: String,
+    githubLink: { type: String, default: null },
     filter: String,
 });
 
