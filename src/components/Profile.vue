@@ -58,7 +58,7 @@
 import { ref, computed, onBeforeMount } from "vue";
 import { useI18n } from "vue-i18n";
 
-import ProfileInfoTag from "../components/ProfileInfoTag.vue";
+import ProfileInfoTag from "./profile-info-tag/ProfileInfoTag.vue";
 import EmailIcon from "./svgs/EmailIcon.vue";
 import PhoneIcon from "./svgs/PhoneIcon.vue";
 import LocationIcon from "./svgs/LocationIcon.vue";

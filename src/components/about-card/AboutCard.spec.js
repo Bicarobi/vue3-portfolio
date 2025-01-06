@@ -38,6 +38,8 @@ describe("About Card Tests!", () => {
             },
         });
 
+        console.log(wrapper.props());
+
         const containsSkillTitle = skillsTitles.some((title) => wrapper.props().type.includes(title));
         const containsSkillDesc = skillsDescs.some((desc) => wrapper.props().desc.includes(desc));
 
