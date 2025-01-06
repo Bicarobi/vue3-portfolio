@@ -35,7 +35,7 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-import AboutCard from "../components/AboutCard.vue";
+import AboutCard from "../components/about-card/AboutCard.vue";
 
 import WebDevIcon from "../components/svgs/WebDevIcon.vue";
 import WebDesignIcon from "../components/svgs/WebDesignIcon.vue";
