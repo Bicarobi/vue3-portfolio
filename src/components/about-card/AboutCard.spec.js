@@ -12,19 +12,21 @@ describe("About Card Tests!", () => {
         hr: hr,
     };
 
-    it.each(["en", "hr"])("Should render and contain correct type for locale: %s", (locale) => {
+    const image = "image";
+    const titles = {
+        en: "web development",
+        hr: "razvoj web stranica",
+    };
+    const descs = {
+        en: "Creating complete websites using Vue.js and Nest.js",
+        hr: "Izrada kompletnih web stranica koristeći Vue.js i Nest.js",
+    };
+
+    const localeKeys = Object.keys(locales);
+
+    it.each(localeKeys)("Should render and contain correct type for locale: %s", (locale) => {
         const skillsTitles = Object.values(locales[locale].aboutView.skills).map((skill) => skill.title);
         const skillsDescs = Object.values(locales[locale].aboutView.skills).map((skill) => skill.desc);
-
-        const image = "image";
-        const titles = {
-            en: "web development",
-            hr: "razvoj web stranica",
-        };
-        const descs = {
-            en: "Creating complete websites using Vue.js and Nest.js",
-            hr: "Izrada kompletnih web stranica koristeći Vue.js i Nest.js",
-        };
 
         const wrapper = mount(AboutCard, {
             slots: {
@@ -43,6 +45,9 @@ describe("About Card Tests!", () => {
 
         expect(containsSkillTitle).toBe(true);
         expect(containsSkillDesc).toBe(true);
+
+        expect(wrapper.get('[data-test="type"]').text()).toBe(wrapper.props().type);
+        expect(wrapper.get('[data-test="desc"]').text()).toBe(wrapper.props().desc);
         console.log(wrapper.html());
     });
 });

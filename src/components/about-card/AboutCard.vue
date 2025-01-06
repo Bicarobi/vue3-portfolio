@@ -5,8 +5,8 @@
                 <slot></slot>
             </div>
             <div class="grid-right-side">
-                <div class="card-type">{{ type }}</div>
-                <div class="card-desc">{{ desc }}</div>
+                <div class="card-type" data-test="type">{{ type }}</div>
+                <div class="card-desc" data-test="desc">{{ desc }}</div>
             </div>
         </div>
     </div>
