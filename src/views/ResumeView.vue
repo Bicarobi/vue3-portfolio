@@ -37,7 +37,7 @@ import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
 import ResumeInfo from "../components/resume-info/ResumeInfo.vue";
-import ProgressBar from "../components/ProgressBar.vue";
+import ProgressBar from "../components/progress-bar/ProgressBar.vue";
 
 import EducationIcon from "../components/svgs/EducationIcon.vue";
 import WorkIcon from "../components/svgs/WorkIcon.vue";

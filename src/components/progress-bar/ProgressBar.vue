@@ -1,14 +1,14 @@
 <template>
     <div class="progress-bar-container">
         <div class="text-container">
-            <div>{{ type }}</div>
-            <div style="color: #727272">{{ percentage }}%</div>
+            <div data-test="type">{{ type }}</div>
+            <div style="color: #727272" data-test="percentage">{{ percentage }}%</div>
         </div>
         <div class="bar-outline">
-            <div class="bar-fill" :style="{ width: percentage + '%' }"></div>
+            <div class="bar-fill" :style="{ width: percentage + '%' }" data-test="percentage-width"></div>
         </div>
         <div class="tag-container">
-            <div class="tag" v-for="skill in skills" :key="skill">{{ skill }}</div>
+            <div class="tag" v-for="skill in skills" :key="skill" data-test="skill">{{ skill }}</div>
         </div>
     </div>
 </template>

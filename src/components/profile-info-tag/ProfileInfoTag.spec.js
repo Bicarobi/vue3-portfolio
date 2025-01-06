@@ -6,7 +6,7 @@ import hr from "../../locales/hr.json";
 
 import ProfileInfoTag from "./ProfileInfoTag.vue";
 
-describe("Profil Info Tag Tests!", () => {
+describe("Profile Info Tag Tests!", () => {
     const locales = {
         en: en,
         hr: hr,

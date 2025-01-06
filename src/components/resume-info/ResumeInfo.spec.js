@@ -5,7 +5,7 @@ import en from "../../locales/en.json";
 
 import ResumeInfo from "./ResumeInfo.vue";
 
-describe("Profil Info Tag Tests!", () => {
+describe("Resume Info Tests!", () => {
     const infos = {
         eduInfo: {
             title: "Sveučilište Sjever Varaždin - Master's degree - Multimedia",
