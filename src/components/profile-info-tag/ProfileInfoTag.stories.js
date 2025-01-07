@@ -1,17 +1,18 @@
 import { fn } from "@storybook/test";
 import { ref, watch } from "vue";
 
-import AboutCard from "./AboutCard.vue";
+import ProfileInfoTag from "./ProfileInfoTag.vue";
 
-import WebDevIcon from "../svgs/WebDevIcon.vue";
+import EmailIcon from "../svgs/EmailIcon.vue";
 
 export default {
-    title: "Components/AboutCard",
-    component: [AboutCard, WebDevIcon],
+    title: "Components/ProfileInfoTag",
+    component: [ProfileInfoTag, EmailIcon],
     tags: ["autodocs"],
     argTypes: {
         type: { control: "text" },
-        desc: { control: "text" },
+        description: { control: "text" },
+        link: { control: "text" },
         theme: {
             options: ["light", "dark"],
             control: { type: "radio" },
@@ -21,7 +22,7 @@ export default {
 };
 
 const Template = (args) => ({
-    components: { AboutCard, WebDevIcon },
+    components: { ProfileInfoTag, EmailIcon },
     setup() {
         const currentTheme = ref(args.theme);
 
@@ -37,16 +38,17 @@ const Template = (args) => ({
         return { args, currentTheme };
     },
     template: `
-    <AboutCard v-bind="args">
-        <WebDevIcon></WebDevIcon>
-    </AboutCard>
+    <ProfileInfoTag v-bind="args">
+        <EmailIcon></EmailIcon>
+    </ProfileInfoTag>
     `,
 });
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default = Template.bind({});
 Default.args = {
-    type: "Basic Card",
-    desc: "This is a description of the card.",
+    type: "Tag Title",
+    description: "This is a description of the tag.",
+    link: "https://www.google.com/",
     theme: "light",
 };

@@ -1224,6 +1224,7 @@ body {
   transition: 0.3s;
 }
 
+*,
 #app {
   /* 	font-family: Avenir, Helvetica, Arial, sans-serif; */
   font-family: Roboto, sans-serif;

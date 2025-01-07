@@ -27,57 +27,57 @@ $tablet: "(max-width: 1200px)";
 $desktop: "(min-width: 1201px)";
 
 :root {
-	--font-size1: #{$font-size-desktop};
+    --font-size1: #{$font-size-desktop};
 
-	--icon-size: #{$icon-size-desktop};
-	--icon-size2: #{$icon-size-desktop * 2};
+    --icon-size: #{$icon-size-desktop};
+    --icon-size2: #{$icon-size-desktop * 2};
 }
 
 @media #{$mobile} {
-	:root {
-		/* 		--icon-size: #{$icon-size-mobile}; */
-		--icon-size2: #{$icon-size-mobile * 2};
-	}
+    :root {
+        /* 		--icon-size: #{$icon-size-mobile}; */
+        --icon-size2: #{$icon-size-mobile * 2};
+    }
 }
 
 [data-theme="light"] {
-	--color1: #{$gray8};
-	--color2: #{$orange};
-	--color3: #{$yellow};
-	--color4: #{$gray1};
-	--color5: #{$white2};
-	--color6: #{$white};
-	--color7: #{$white2};
-	--color8: #{$gray5};
-	--color9: #{$white3};
-	--color10: #{$gray7};
-	--color11: #{$gray8};
-	--color12: #{$white};
-	--color13: #{$white2};
-	--color14: #{$white3};
-	--color15: #{$white4};
+    --color1: #{$gray8};
+    --color2: #{$orange};
+    --color3: #{$yellow};
+    --color4: #{$gray1};
+    --color5: #{$white2};
+    --color6: #{$white};
+    --color7: #{$white2};
+    --color8: #{$gray5};
+    --color9: #{$white3};
+    --color10: #{$gray7};
+    --color11: #{$gray8};
+    --color12: #{$white};
+    --color13: #{$white2};
+    --color14: #{$white3};
+    --color15: #{$white4};
 
-	@media #{$mobile} {
-		--color13: #{$white3};
-	}
+    @media #{$mobile} {
+        --color13: #{$white3};
+    }
 }
 
 [data-theme="dark"] {
-	--color1: #{$white};
-	--color2: #{$yellow};
-	--color3: #{$orange};
-	--color4: #{$gray1};
-	--color5: #{$gray2};
-	--color6: #{$gray3};
-	--color7: #{$gray3};
-	--color8: #{$gray5};
-	--color9: #{$gray6};
-	--color10: #{$gray7};
-	--color11: #{$gray8};
-	--color12: #{$gray9};
-	--color13: #{$white2};
-	--color14: #{$gray2};
-	--color15: #{$gray6};
+    --color1: #{$white};
+    --color2: #{$yellow};
+    --color3: #{$orange};
+    --color4: #{$gray1};
+    --color5: #{$gray2};
+    --color6: #{$gray3};
+    --color7: #{$gray3};
+    --color8: #{$gray5};
+    --color9: #{$gray6};
+    --color10: #{$gray7};
+    --color11: #{$gray8};
+    --color12: #{$gray9};
+    --color13: #{$white2};
+    --color14: #{$gray2};
+    --color15: #{$gray6};
 }
 
 @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
@@ -100,55 +100,56 @@ $desktop: "(min-width: 1201px)";
 /* @import "./components/ContactForm"; */
 
 body {
-	background-color: var(--color6);
-	margin: 0;
+    background-color: var(--color6);
+    margin: 0;
 
-	@media #{$mobile} {
-		background-color: var(--color12);
-		margin-bottom: 70px;
-	}
+    @media #{$mobile} {
+        background-color: var(--color12);
+        margin-bottom: 70px;
+    }
 }
 
 html {
-	overflow-y: scroll;
-	height: fit-content;
+    overflow-y: scroll;
+    height: fit-content;
 }
 
 html,
 body {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
-	transition: 0.3s;
+    box-sizing: inherit;
+    transition: 0.3s;
 }
 
+*,
 #app {
-	/* 	font-family: Avenir, Helvetica, Arial, sans-serif; */
-	font-family: Roboto, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    /* 	font-family: Avenir, Helvetica, Arial, sans-serif; */
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 //SCROLLBAR
 
 /* width */
 ::-webkit-scrollbar {
-	width: 10px;
+    width: 10px;
 
-	@media #{$mobile} {
-		display: none;
-	}
+    @media #{$mobile} {
+        display: none;
+    }
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: var(--color6);
+    background: var(--color6);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: var(--color9);
+    background: var(--color9);
 }
