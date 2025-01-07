@@ -1,19 +1,20 @@
 import { fn } from "@storybook/test";
+import { ref, watch } from "vue";
 
 import AboutCard from "./AboutCard.vue";
 
 import WebDevIcon from "../svgs/WebDevIcon.vue";
-//import "../../styles/index.css";
-//import "../../styles/index.scss";
-//import "../../styles/components/_AboutCard.scss";
 
 export default {
-    title: "Components/AboutCard", // This defines the Storybook hierarchy
+    title: "Components/AboutCard",
     component: [AboutCard, WebDevIcon],
     argTypes: {
-        type: { control: "text" }, // Adds a text control for the `type` prop
-        desc: { control: "text" }, // Adds a text control for the `desc` prop
-        darkMode: { control: false },
+        type: { control: "text" },
+        desc: { control: "text" },
+        theme: {
+            options: ["light", "dark"],
+            control: { type: "radio" },
+        },
     },
     args: { onClick: fn() },
 };
@@ -21,7 +22,18 @@ export default {
 const Template = (args) => ({
     components: { AboutCard, WebDevIcon },
     setup() {
-        return { args };
+        const currentTheme = ref(args.theme);
+
+        watch(
+            () => args.theme,
+            (newTheme) => {
+                document.documentElement.setAttribute("data-theme", newTheme);
+                currentTheme.value = newTheme;
+            },
+            { immediate: true }
+        );
+
+        return { args, currentTheme };
     },
     template: `
     <div class="about-card-container">
@@ -37,5 +49,5 @@ export const Default = Template.bind({});
 Default.args = {
     type: "Basic Card",
     desc: "This is a description of the card.",
-    darkMode: false,
+    theme: "light",
 };
