@@ -35,13 +35,13 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-import AboutCard from "../components/about-card/AboutCard.vue";
+import AboutCard from "@/components/about-card/AboutCard.vue";
 
-import WebDevIcon from "../components/svgs/WebDevIcon.vue";
-import WebDesignIcon from "../components/svgs/WebDesignIcon.vue";
-import GraphicDesignIcon from "../components/svgs/GraphicDesignIcon.vue";
-import Design3DIcon from "../components/svgs/Design3DIcon.vue";
-import PhotoIcon from "../components/svgs/PhotoIcon.vue";
+import WebDevIcon from "@/components/svgs/WebDevIcon.vue";
+import WebDesignIcon from "@/components/svgs/WebDesignIcon.vue";
+import GraphicDesignIcon from "@/components/svgs/GraphicDesignIcon.vue";
+import Design3DIcon from "@/components/svgs/Design3DIcon.vue";
+import PhotoIcon from "@/components/svgs/PhotoIcon.vue";
 
 const route = useRoute();
 const { t } = useI18n({});
