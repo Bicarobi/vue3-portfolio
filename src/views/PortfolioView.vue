@@ -24,7 +24,7 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
-import WorkCard from "../components/WorkCard.vue";
+import WorkCard from "@/components/work-card/WorkCard.vue";
 
 const route = useRoute();
 const { t } = useI18n({});

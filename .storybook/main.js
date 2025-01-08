@@ -1,5 +1,7 @@
 /** @type { import('@storybook/vue3-webpack5').StorybookConfig } */
 
+const path = require("path");
+
 const config = {
     stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     addons: ["@storybook/addon-webpack5-compiler-swc", "@storybook/addon-onboarding", "@storybook/addon-essentials", "@chromatic-com/storybook", "@storybook/addon-interactions", "@storybook/addon-mdx-gfm"],
@@ -8,6 +10,8 @@ const config = {
         name: "@storybook/vue3-webpack5",
         options: {},
     },
+
+    staticDirs: ["../src/assets"],
 
     webpackFinal: async (config) => {
         config.module.rules.push({
@@ -18,6 +22,12 @@ const config = {
                 "sass-loader", // Loads and compiles a SCSS file to CSS
             ],
         });
+
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            "@": path.resolve(__dirname, "../src"),
+        };
+
         return config;
     },
 };

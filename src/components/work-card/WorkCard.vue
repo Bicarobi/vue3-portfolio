@@ -1,7 +1,7 @@
 <template>
     <div class="work-card-container">
         <div class="desc-container" @click="showDesc(true, false), (expanded = false)" @mouseenter="showDesc(false, true)" @mouseleave="showDesc(false, false)">
-            <img :src="require('../assets/' + img[0])" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" />
+            <img :src="require('@/assets/' + img[0])" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" />
             <div class="desc" :style="descClicked || descHovered ? 'opacity: 1' : 'opacity: 0'">
                 {{ desc }}
             </div>
@@ -13,7 +13,7 @@
         <div class="modal" :style="descClicked ? 'display: fixed' : 'display: none'">
             <img
                 ref="imageRef"
-                :src="require('../assets/' + img[index])"
+                :src="require('@/assets/' + img[index])"
                 :class="{
                     expanded: expanded,
                     'wide-expanded': expandedWide && expanded,
@@ -41,11 +41,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-import LeftArrowIcon from "../components/svgs/LeftArrowIcon.vue";
-import RightArrowIcon from "../components/svgs/RightArrowIcon.vue";
-import CloseIcon from "../components/svgs/CloseIcon.vue";
-import ExpandIcon from "../components/svgs/ExpandIcon.vue";
-import GitHubIcon from "./svgs/GitHubIcon.vue";
+import LeftArrowIcon from "../svgs/LeftArrowIcon.vue";
+import RightArrowIcon from "../svgs/RightArrowIcon.vue";
+import CloseIcon from "../svgs/CloseIcon.vue";
+import ExpandIcon from "../svgs/ExpandIcon.vue";
+import GitHubIcon from "../svgs/GitHubIcon.vue";
 
 const props = defineProps({
     title: String,
