@@ -232,4 +232,8 @@
             }
         }
     }
+
+    > .modal.visible {
+        display: none;
+    }
 }

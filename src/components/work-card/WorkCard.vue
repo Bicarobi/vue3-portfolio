@@ -1,7 +1,7 @@
 <template>
     <div class="work-card-container">
         <div class="desc-container" @click="showDesc(true, false), (expanded = false)" @mouseenter="showDesc(false, true)" @mouseleave="showDesc(false, false)">
-            <img :src="require('@/assets/' + img[0])" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" />
+            <img id="thumbnail" :src="resolveImage(img[0])" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" />
             <div class="desc" :style="descClicked || descHovered ? 'opacity: 1' : 'opacity: 0'">
                 {{ desc }}
             </div>
@@ -10,10 +10,11 @@
             <div class="title">{{ title }}</div>
             <div class="type">{{ type }}</div>
         </div>
-        <div class="modal" :style="descClicked ? 'display: fixed' : 'display: none'">
+        <div class="modal" :class="{ visible: descClicked }">
             <img
+                id="gallery"
                 ref="imageRef"
-                :src="require('@/assets/' + img[index])"
+                :src="resolveImage(img[index])"
                 :class="{
                     expanded: expanded,
                     'wide-expanded': expandedWide && expanded,
@@ -33,7 +34,7 @@
                 </div>
                 <div class="desc">{{ desc }}</div>
             </div>
-            <LeftArrowIcon @click="changeImage(-1)" /><RightArrowIcon @click="changeImage(1)" /><CloseIcon @click="showDesc(true, false), expandImage(false)" /><ExpandIcon @click="expandImage" :expanded="expanded" />
+            <LeftArrowIcon @click="changeImage(-1)" /><RightArrowIcon @click="changeImage(1)" /><CloseIcon @click="showDesc(true, false), expandImage(false)" /><ExpandIcon @click="expandImage()" :expanded="expanded" />
         </div>
     </div>
 </template>
@@ -67,6 +68,14 @@ const imageHeight = ref(0);
 
 const imageRef = ref(null);
 
+function resolveImage(path) {
+    try {
+        return require("@/assets/" + path);
+    } catch {
+        return "/mocked-placeholder.png"; // Mock fallback
+    }
+}
+
 function showDesc(clicked, hovered) {
     if (clicked) {
         descClicked.value = !descClicked.value;
@@ -85,8 +94,12 @@ function changeImage(dir) {
     }
 }
 
-function expandImage() {
-    expanded.value = !expanded.value;
+function expandImage(value) {
+    if (value) {
+        expanded.value = value;
+    } else {
+        expanded.value = !expanded.value;
+    }
 }
 
 function getImageSize() {

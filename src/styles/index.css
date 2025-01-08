@@ -1074,6 +1074,9 @@
   font-size: 1em;
   white-space: pre-line;
 }
+.work-card-container > .modal.visible {
+  display: none;
+}
 
 .resume-info-container {
   display: flex;
@@ -1221,7 +1224,6 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
-  transition: 0.3s;
 }
 
 *,
