@@ -1074,7 +1074,7 @@
   font-size: 1em;
   white-space: pre-line;
 }
-.work-card-container > .modal.visible {
+.work-card-container > .modal.invisible {
   display: none;
 }
 

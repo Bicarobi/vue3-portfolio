@@ -95,16 +95,16 @@ describe("Work Card Tests!", () => {
         const modal = wrapper.find(".modal");
 
         // Initial state
-        expect(modal.classes()).not.toContain("visible");
+        expect(modal.classes()).toContain("invisible");
 
         // Show modal
         await descContainer.trigger("click");
-        expect(modal.classes()).toContain("visible");
+        expect(modal.classes()).not.toContain("invisible");
 
         // Close modal
         const closeIcon = wrapper.findComponent({ name: "CloseIcon" });
         await closeIcon.trigger("click");
-        expect(modal.classes()).not.toContain("visible");
+        expect(modal.classes()).toContain("invisible");
     });
 
     it("renders links correctly", () => {

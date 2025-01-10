@@ -10,7 +10,7 @@
             <div class="title">{{ title }}</div>
             <div class="type">{{ type }}</div>
         </div>
-        <div class="modal" :class="{ visible: !descClicked }">
+        <div class="modal" :class="{ invisible: !descClicked }">
             <img
                 id="gallery"
                 ref="imageRef"

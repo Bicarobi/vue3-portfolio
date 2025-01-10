@@ -21,7 +21,7 @@
 
 <script setup>
 import { ref, onBeforeMount } from "vue";
-import ThemeIcon from "../components/svgs/ThemeIcon.vue";
+import ThemeIcon from "../svgs/ThemeIcon.vue";
 
 const switchedTheme = ref(false);
 const themeIcon = ref("moon");
