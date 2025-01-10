@@ -10,7 +10,7 @@
             <div class="title">{{ title }}</div>
             <div class="type">{{ type }}</div>
         </div>
-        <div class="modal" :class="{ visible: descClicked }">
+        <div class="modal" :class="{ visible: !descClicked }">
             <img
                 id="gallery"
                 ref="imageRef"
@@ -34,7 +34,7 @@
                 </div>
                 <div class="desc">{{ desc }}</div>
             </div>
-            <LeftArrowIcon @click="changeImage(-1)" /><RightArrowIcon @click="changeImage(1)" /><CloseIcon @click="showDesc(true, false), expandImage(false)" /><ExpandIcon @click="expandImage()" :expanded="expanded" />
+            <LeftArrowIcon @click="changeImage(-1)" /><RightArrowIcon @click="changeImage(1)" /><CloseIcon @click="showDesc(true, false), expandImage(false)" /><ExpandIcon @click="expandImage(null)" :expanded="expanded" />
         </div>
     </div>
 </template>
