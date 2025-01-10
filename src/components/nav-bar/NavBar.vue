@@ -24,7 +24,7 @@ import { ref, onBeforeMount } from "vue";
 import ThemeIcon from "../svgs/ThemeIcon.vue";
 
 const switchedTheme = ref(false);
-const themeIcon = ref("moon");
+const themeIcon = ref("sun");
 
 const switchTheme = () => {
     if (switchedTheme.value) {
@@ -40,12 +40,7 @@ const switchTheme = () => {
 };
 
 onBeforeMount(() => {
-    if (localStorage.darkMode === "enabled") {
-        switchedTheme.value = true;
-        switchTheme();
-    } else {
-        switchedTheme.value = false;
-        switchTheme();
-    }
+    switchedTheme.value = localStorage.darkMode === "enabled";
+    switchTheme();
 });
 </script>

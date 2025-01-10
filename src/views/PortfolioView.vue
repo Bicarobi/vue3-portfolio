@@ -15,21 +15,39 @@
             <router-link :to="{ name: 'portfolio', params: { filter: 'photography' } }">{{ $t("portfolioView.skills.photo") }}</router-link>
         </div>
         <hr class="line" />
-        <div class="works-container"><WorkCard v-for="work in filterWorks(processedWorks)" :key="work.title + work.type" :title="work.title" :type="work.type" :desc="work.desc" :img="work.img" :link="work.link" :githubLink="work.githubLink" :filter="work.filter" /></div>
+        <div class="works-container">
+            <WorkCard v-for="work in filterWorks(processedWorks)" :key="work.title + work.type" v-bind="work" @click="openModal(work)" />
+        </div>
+
+        <WorkCardModal v-if="isModalVisible" v-bind="selectedWork" @closeModal="closeModal" />
     </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
 import WorkCard from "@/components/work-card/WorkCard.vue";
+import WorkCardModal from "@/components/work-card-modal/WorkCardModal.vue";
 
 const route = useRoute();
 const { t } = useI18n({});
 
+const selectedWork = ref(null);
+const isModalVisible = ref(false);
+
 const filter = computed(() => route.params.filter);
+
+const openModal = (work) => {
+    selectedWork.value = work;
+    isModalVisible.value = true;
+};
+
+const closeModal = () => {
+    selectedWork.value = null;
+    isModalVisible.value = false;
+};
 
 const filterWorks = (processedWorks) => {
     if (filter.value) {
