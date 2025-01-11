@@ -1,15 +1,15 @@
 <template>
     <div class="work-card-container">
-        <div class="desc-container" @mouseenter="showDesc(true)" @mouseleave="showDesc(false)">
-            <img id="thumbnail" :src="'/assets/' + img[0]" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" />
+        <div class="desc-container" @mouseenter="showDesc(true)" @mouseleave="showDesc(false)" data-test="desc-container">
+            <img :src="'/assets/' + img[0]" :style="{ objectFit: ['web-dev', 'web-design', 'app-dev', 'app-design'].includes(filter) ? 'contain' : 'cover' }" data-test="thumbnail" />
 
-            <div class="desc" :style="isDescShown ? 'opacity: 1' : 'opacity: 0'">
+            <div class="desc" :style="isDescShown ? 'opacity: 1' : 'opacity: 0'" data-test="desc">
                 {{ desc }}
             </div>
         </div>
         <div class="text-container">
-            <div class="title">{{ title }}</div>
-            <div class="type">{{ type }}</div>
+            <div class="title" data-test="title">{{ title }}</div>
+            <div class="type" data-test="type">{{ type }}</div>
         </div>
     </div>
 </template>

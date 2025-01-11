@@ -2,7 +2,6 @@
     <div class="modal">
         <LeftArrowIcon @click="changeImage(-1)" />
         <img
-            id="gallery"
             ref="imageRef"
             :src="'/assets/' + img[index]"
             :class="{
@@ -11,24 +10,25 @@
                 'tall-expanded': !expandedWide && expanded,
                 rotate: expanded && expandedWide,
             }"
-            @load="getImageSize"
+            @load="getImageSize(imageRef)"
+            data-test="gallery"
         />
         <RightArrowIcon @click="changeImage(1)" />
 
-        <div class="text-container" :style="expanded ? 'display: none' : 'display: flex'">
-            <div class="number">{{ index + 1 + " / " + img.length }}</div>
+        <div class="text-container" :style="expanded ? 'display: none' : 'display: flex'" data-test="text-container">
+            <div class="number" data-test="number">{{ index + 1 + " / " + img.length }}</div>
             <div>
-                <a v-if="link" :href="link" target="_blank">
-                    <div class="title">{{ title }}</div>
+                <a v-if="link" :href="link" target="_blank" data-test="title-link">
+                    <div class="title" data-test="linked-title">{{ title }}</div>
                 </a>
 
-                <div v-else class="title">{{ title }}</div>
+                <div v-else class="title" data-test="not-linked-title">{{ title }}</div>
 
-                <a v-if="githubLink" :href="githubLink" target="_blank">
+                <a v-if="githubLink" :href="githubLink" target="_blank" data-test="github-link">
                     <GitHubIcon />
                 </a>
             </div>
-            <div class="desc">{{ desc }}</div>
+            <div class="desc" data-test="desc">{{ desc }}</div>
         </div>
         <CloseIcon @click="$emit('closeModal'), expandImage(false)" />
         <ExpandIcon @click="expandImage()" :expanded="expanded" />
@@ -80,9 +80,9 @@ function expandImage(value) {
     }
 }
 
-function getImageSize() {
-    if (imageRef.value) {
-        const img = imageRef.value;
+function getImageSize(value) {
+    if (value) {
+        const img = value;
         imageWidth.value = img.naturalWidth;
         imageHeight.value = img.naturalHeight;
 
