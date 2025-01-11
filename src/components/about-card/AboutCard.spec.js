@@ -1,55 +1,33 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 
-import en from "../../locales/en.json";
-import hr from "../../locales/hr.json";
-
 import AboutCard from "./AboutCard.vue";
 
 describe("About Card Tests!", () => {
-    const locales = {
-        en: en,
-        hr: hr,
+    const props = {
+        type: "Card Type Example",
+        desc: "This is a description of the card.",
     };
 
-    const image = "image";
-    const titles = {
-        en: "web development",
-        hr: "razvoj web stranica",
-    };
-    const descs = {
-        en: "Creating complete websites using Vue.js and Nest.js",
-        hr: "Izrada kompletnih web stranica koristeći Vue.js i Nest.js",
-    };
+    it("renders the correct type and desc props", () => {
+        const wrapper = mount(AboutCard, { props });
 
-    const localeKeys = Object.keys(locales);
+        const type = wrapper.get('[data-test="type"]');
+        const desc = wrapper.get('[data-test="desc"]');
 
-    it.each(localeKeys)("Should render and contain correct type for locale: %s", (locale) => {
-        const skillsTitles = Object.values(locales[locale].aboutView.skills).map((skill) => skill.title);
-        const skillsDescs = Object.values(locales[locale].aboutView.skills).map((skill) => skill.desc);
+        expect(type.text()).toBe(props.type);
+        expect(desc.text()).toBe(props.desc);
+    });
+
+    it("renders slot content", () => {
+        const slotContent = "This is the slot content";
 
         const wrapper = mount(AboutCard, {
             slots: {
-                default: image,
-            },
-            propsData: {
-                type: titles[locale],
-                desc: descs[locale],
+                default: slotContent,
             },
         });
 
-        console.log(wrapper.props());
-
-        const containsSkillTitle = skillsTitles.some((title) => wrapper.props().type.includes(title));
-        const containsSkillDesc = skillsDescs.some((desc) => wrapper.props().desc.includes(desc));
-
-        expect(wrapper.html()).toContain(image);
-
-        expect(containsSkillTitle).toBe(true);
-        expect(containsSkillDesc).toBe(true);
-
-        expect(wrapper.get('[data-test="type"]').text()).toBe(wrapper.props().type);
-        expect(wrapper.get('[data-test="desc"]').text()).toBe(wrapper.props().desc);
-        console.log(wrapper.html());
+        expect(wrapper.html()).toContain(slotContent);
     });
 });

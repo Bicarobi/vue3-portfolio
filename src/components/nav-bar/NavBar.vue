@@ -1,13 +1,13 @@
 <template>
     <div class="nav-grid-container">
         <div class="nav-grid-left-side">
-            <router-link :to="{ name: 'portfolio' }">{{ $t("navBar.portfolio") }}</router-link>
-            <router-link :to="{ name: 'resume' }">{{ $t("navBar.resume") }}</router-link>
-            <router-link :to="{ name: 'about' }">{{ $t("navBar.about") }}</router-link>
+            <router-link :to="{ name: 'portfolio' }" data-test="portfolio-link">{{ $t("navBar.portfolio") }}</router-link>
+            <router-link :to="{ name: 'resume' }" data-test="resume-link">{{ $t("navBar.resume") }}</router-link>
+            <router-link :to="{ name: 'about' }" data-test="about-link">{{ $t("navBar.about") }}</router-link>
         </div>
         <div class="nav-grid-right-side">
             <div class="locale-changer">
-                <select v-model="$i18n.locale">
+                <select v-model="$i18n.locale" data-test="locale">
                     <option selected value="hr">Hrvatski</option>
                     <option value="en">English</option>
                 </select>
