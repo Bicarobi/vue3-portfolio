@@ -5,14 +5,7 @@
             <hr class="nav-line" />
         </div>
         <div class="type-container">
-            <router-link :to="{ name: 'portfolio' }" :class="{ 'router-link-exact-active': !$route.params.filter }">{{ $t("portfolioView.skills.all") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'web-dev' } }">{{ $t("portfolioView.skills.webDev") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'app-dev' } }">{{ $t("portfolioView.skills.appDev") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'web-design' } }">{{ $t("portfolioView.skills.webDesign") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: '3d-design' } }">{{ $t("portfolioView.skills.design3D") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'app-design' } }">{{ $t("portfolioView.skills.appDesign") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'graphic-design' } }">{{ $t("portfolioView.skills.graphicDesign") }}</router-link>
-            <router-link :to="{ name: 'portfolio', params: { filter: 'photography' } }">{{ $t("portfolioView.skills.photo") }}</router-link>
+            <div v-for="tag in filters" :key="tag" @click="changeFilter(tag[0])" class="filter" :class="{ active: filter == tag[0] }">{{ $t("portfolioView.skills." + tag[1]) }}</div>
         </div>
         <hr class="line" />
         <div class="works-container">
@@ -36,8 +29,17 @@ const { t } = useI18n({});
 
 const selectedWork = ref(null);
 const isModalVisible = ref(false);
-
-const filter = computed(() => route.params.filter);
+const filter = ref(null);
+const filters = ref([
+    [null, "all"],
+    ["web-dev", "webDev"],
+    ["app-dev", "appDev"],
+    ["web-design", "webDesign"],
+    ["3d-design", "design3D"],
+    ["app-design", "appDesign"],
+    ["graphic-design", "graphicDesign"],
+    ["photography", "photo"],
+]);
 
 const openModal = (work) => {
     selectedWork.value = work;
@@ -47,6 +49,10 @@ const openModal = (work) => {
 const closeModal = () => {
     selectedWork.value = null;
     isModalVisible.value = false;
+};
+
+const changeFilter = (value) => {
+    filter.value = value;
 };
 
 const filterWorks = (processedWorks) => {

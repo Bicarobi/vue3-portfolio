@@ -140,9 +140,9 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
 
-    @media #{$mobile} {
+    /* @media #{$mobile} {
         display: none;
-    }
+    } */
 }
 
 /* Track */
