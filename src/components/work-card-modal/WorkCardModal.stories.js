@@ -1,15 +1,14 @@
 import { ref, watch } from "vue";
-
-import WorkCard from "./WorkCard.vue";
+import WorkCardModal from "./WorkCardModal.vue";
 
 export default {
-    title: "Components/WorkCard",
-    component: [WorkCard],
+    title: "Components/WorkCardModal",
+    component: [WorkCardModal],
     tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
-                component: "Component used in portfolio grid for thumbnails and information about works",
+                component: "Modal component used in portfolio which shows more information about clicked Work Card component",
             },
         },
     },
@@ -18,6 +17,8 @@ export default {
         type: { control: "text" },
         desc: { control: "text" },
         img: { control: "array" },
+        link: { control: "text" },
+        githubLink: { control: "text" },
         theme: {
             options: ["light", "dark"],
             control: { type: "radio" },
@@ -26,7 +27,7 @@ export default {
 };
 
 const Template = (args) => ({
-    components: { WorkCard },
+    components: { WorkCardModal },
     setup() {
         const currentTheme = ref(args.theme);
 
@@ -42,8 +43,10 @@ const Template = (args) => ({
         return { args, currentTheme };
     },
     template: `
-    <WorkCard v-bind="args"/>
-    `,
+    <WorkCardModal
+      v-bind="args"
+    />
+  `,
 });
 
 export const Default = Template.bind({});
@@ -51,6 +54,8 @@ Default.args = {
     title: "Title",
     type: "Type",
     desc: "This is a description.",
-    img: ["web-dev/work3/web-dev-hdlu-8.png", "web-dev/work3/web-dev-hdlu-7.png"],
+    img: ["web-dev/work3/web-dev-hdlu-8.png", "web-dev/work3/web-dev-hdlu-2.jpg"],
+    link: "https://hdluvz-no-wp.vercel.app/",
+    githubLink: "https://github.com/Bicarobi/hdluvz-no-wp",
     theme: "light",
 };

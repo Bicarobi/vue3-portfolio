@@ -73,7 +73,7 @@ function changeImage(dir) {
 }
 
 function expandImage(value) {
-    if (value) {
+    if (typeof value === "boolean") {
         expanded.value = value;
     } else {
         expanded.value = !expanded.value;
