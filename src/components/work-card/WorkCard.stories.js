@@ -2,34 +2,32 @@ import { fn } from "@storybook/test";
 import { ref, watch } from "vue";
 
 import WorkCard from "./WorkCard.vue";
-import LeftArrowIcon from "../svgs/LeftArrowIcon.vue";
-import RightArrowIcon from "../svgs/RightArrowIcon.vue";
-import CloseIcon from "../svgs/CloseIcon.vue";
-import ExpandIcon from "../svgs/ExpandIcon.vue";
-import GitHubIcon from "../svgs/GitHubIcon.vue";
 
 export default {
     title: "Components/WorkCard",
-    component: [WorkCard, LeftArrowIcon, RightArrowIcon, CloseIcon, ExpandIcon, GitHubIcon],
+    component: [WorkCard],
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "Component used in portfolio grid for thumbnails and information about works",
+            },
+        },
+    },
     argTypes: {
         title: { control: "text" },
         type: { control: "text" },
         desc: { control: "text" },
         img: { control: "array" },
-        link: { control: "text" },
-        githubLink: { control: "text" },
-        filter: { control: "text" },
         theme: {
             options: ["light", "dark"],
             control: { type: "radio" },
         },
     },
-    args: { onClick: fn() },
 };
 
 const Template = (args) => ({
-    components: { WorkCard, LeftArrowIcon, RightArrowIcon, CloseIcon, ExpandIcon, GitHubIcon },
+    components: { WorkCard },
     setup() {
         const currentTheme = ref(args.theme);
 
@@ -49,15 +47,11 @@ const Template = (args) => ({
     `,
 });
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default = Template.bind({});
 Default.args = {
     title: "Title",
     type: "Type",
     desc: "This is a description.",
     img: ["web-dev/work3/web-dev-hdlu-8.png", "web-dev/work3/web-dev-hdlu-7.png"],
-    link: "https://www.google.com/",
-    githubLink: "https://github.com/",
-    filter: "filter",
     theme: "light",
 };

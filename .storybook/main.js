@@ -11,7 +11,7 @@ const config = {
         options: {},
     },
 
-    staticDirs: ["../src/assets"],
+    staticDirs: ["../public"],
 
     webpackFinal: async (config) => {
         config.module.rules.push({
