@@ -1,26 +1,25 @@
 <template>
     <div class="about-container">
         <div class="current-page-container">
-            <div class="current-page">{{ $t("navBar." + route.name) }}</div>
+            <div class="current-page" data-test="route">{{ $t("navBar." + route.name) }}</div>
             <hr class="nav-line" />
         </div>
         <div class="grid-container">
             <div class="grid-left-side">
                 <div class="text-container">
-                    <div>
+                    <div data-test="text-1">
                         {{ $t("aboutView.text1") }}
                     </div>
                     <br />
-                    <div>
+                    <div data-test="text-2">
                         {{ $t("aboutView.text2") }}
                     </div>
                 </div>
             </div>
             <div class="grid-right-side">
                 <div class="doing-container">
-                    <!-- <h1>{{ $t("aboutView.doing") }}</h1> -->
                     <div class="card-container">
-                        <AboutCard v-for="card in processedCards" :key="card.type" :type="card.type" :desc="card.desc" :image="card.image">
+                        <AboutCard v-for="card in processedCards" :key="card.type" :type="card.type" :desc="card.desc">
                             <component :is="card.image" />
                         </AboutCard>
                     </div>

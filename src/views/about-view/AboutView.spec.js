@@ -1,21 +1,76 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { mount } from "@vue/test-utils";
-import AboutView from "./AboutView.vue";
 import { createI18n } from "vue-i18n";
 import { createRouter, createMemoryHistory } from "vue-router";
+import AboutView from "./AboutView.vue";
+
+import AboutCard from "@/components/about-card/AboutCard.vue";
+import WebDevIcon from "@/components/svgs/WebDevIcon.vue";
+import WebDesignIcon from "@/components/svgs/WebDesignIcon.vue";
+import GraphicDesignIcon from "@/components/svgs/GraphicDesignIcon.vue";
+import Design3DIcon from "@/components/svgs/Design3DIcon.vue";
+import PhotoIcon from "@/components/svgs/PhotoIcon.vue";
 
 const messages = {
     en: {
-        navBar: { about: "About" },
+        navBar: {
+            about: "About",
+        },
         aboutView: {
-            text1: "About Text 1",
-            text2: "About Text 2",
+            text1: "This is text 1.",
+            text2: "This is text 2.",
             skills: {
-                webDev: { title: "Web Development", desc: "Building websites" },
-                webDesign: { title: "Web Design", desc: "Designing websites" },
-                graphicDesign: { title: "Graphic Design", desc: "Creating graphics" },
-                design3D: { title: "3D Design", desc: "3D Modeling" },
-                photo: { title: "Photography", desc: "Taking photos" },
+                webDev: {
+                    title: "Web Development",
+                    desc: "Building websites and web applications.",
+                },
+                webDesign: {
+                    title: "Web Design",
+                    desc: "Designing user-friendly websites.",
+                },
+                graphicDesign: {
+                    title: "Graphic Design",
+                    desc: "Creating visual content.",
+                },
+                design3D: {
+                    title: "3D Design",
+                    desc: "Modeling and rendering 3D objects.",
+                },
+                photo: {
+                    title: "Photography",
+                    desc: "Capturing moments.",
+                },
+            },
+        },
+    },
+    hr: {
+        navBar: {
+            about: "O nama",
+        },
+        aboutView: {
+            text1: "Ovo je tekst 1.",
+            text2: "Ovo je tekst 2.",
+            skills: {
+                webDev: {
+                    title: "Web Razvoj",
+                    desc: "Izrada web stranica i web aplikacija.",
+                },
+                webDesign: {
+                    title: "Web Dizajn",
+                    desc: "Dizajniranje korisnički prijaznih web stranica.",
+                },
+                graphicDesign: {
+                    title: "Grafički Dizajn",
+                    desc: "Kreiranje vizualnog sadržaja.",
+                },
+                design3D: {
+                    title: "3D Dizajn",
+                    desc: "Modeliranje i renderiranje 3D objekata.",
+                },
+                photo: {
+                    title: "Fotografija",
+                    desc: "Hvatanje trenutaka.",
+                },
             },
         },
     },
@@ -53,29 +108,85 @@ describe("About View Tests!", () => {
         });
     });
 
-    it("renders the current page name", () => {
-        const currentPage = wrapper.find(".current-page");
-        expect(currentPage.text()).toBe("About");
+    it("renders the route name correctly", async () => {
+        i18n.global.locale.value = "en";
+        await wrapper.vm.$nextTick();
+
+        const route = wrapper.find("[data-test='route']");
+        expect(route.text()).toBe("About");
     });
 
-    it("renders the translated text", () => {
-        const textContainer = wrapper.find(".text-container");
-        expect(textContainer.text()).toContain("About Text 1");
-        expect(textContainer.text()).toContain("About Text 2");
+    it("renders the text sections, route name and switches language correctly", async () => {
+        const route = wrapper.find("[data-test='route']");
+        const text1 = wrapper.find("[data-test='text-1']");
+        const text2 = wrapper.find("[data-test='text-2']");
+
+        i18n.global.locale.value = "en";
+        await wrapper.vm.$nextTick();
+
+        expect(route.text()).toBe("About");
+        expect(text1.text()).toBe("This is text 1.");
+        expect(text2.text()).toBe("This is text 2.");
+
+        i18n.global.locale.value = "hr";
+        await wrapper.vm.$nextTick();
+
+        expect(route.text()).toBe("O nama");
+        expect(text1.text()).toBe("Ovo je tekst 1.");
+        expect(text2.text()).toBe("Ovo je tekst 2.");
     });
 
-    it("renders the correct number of cards", () => {
-        const cards = wrapper.findAllComponents({ name: "AboutCard" });
+    it("renders the AboutCard components with correct props and language switching", async () => {
+        const lang = i18n.global.locale.value;
+
+        const cards = wrapper.findAllComponents(AboutCard);
         expect(cards).toHaveLength(Object.keys(messages.en.aboutView.skills).length);
-    });
 
-    it("renders each card with correct props", () => {
-        const cards = wrapper.findAllComponents({ name: "AboutCard" });
-        const expectedCards = Object.values(messages.en.aboutView.skills);
+        const expectedCards = [
+            {
+                type: messages[lang].aboutView.skills.webDev.title,
+                desc: messages[lang].aboutView.skills.webDev.desc,
+                image: WebDevIcon,
+            },
+            {
+                type: messages[lang].aboutView.skills.webDesign.title,
+                desc: messages[lang].aboutView.skills.webDesign.desc,
+                image: WebDesignIcon,
+            },
+            {
+                type: messages[lang].aboutView.skills.graphicDesign.title,
+                desc: messages[lang].aboutView.skills.graphicDesign.desc,
+                image: GraphicDesignIcon,
+            },
+            {
+                type: messages[lang].aboutView.skills.design3D.title,
+                desc: messages[lang].aboutView.skills.design3D.desc,
+                image: Design3DIcon,
+            },
+            {
+                type: messages[lang].aboutView.skills.photo.title,
+                desc: messages[lang].aboutView.skills.photo.desc,
+                image: PhotoIcon,
+            },
+        ];
 
         cards.forEach((card, index) => {
-            expect(card.props("type")).toBe(expectedCards[index].title);
-            expect(card.props("desc")).toBe(expectedCards[index].desc);
+            expect(card.props().type).toEqual(expectedCards[index].type);
+            expect(card.props().desc).toEqual(expectedCards[index].desc);
+
+            const imageComponent = wrapper.findComponent(expectedCards[index].image);
+            expect(imageComponent.exists()).toBe(true);
+        });
+
+        i18n.global.locale.value = "hr";
+        await wrapper.vm.$nextTick();
+
+        cards.forEach((card, index) => {
+            expect(card.props().type).toEqual(expectedCards[index].type);
+            expect(card.props().desc).toEqual(expectedCards[index].desc);
+
+            const imageComponent = wrapper.findComponent(expectedCards[index].image);
+            expect(imageComponent.exists()).toBe(true);
         });
     });
 });
