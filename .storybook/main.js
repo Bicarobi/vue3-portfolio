@@ -11,7 +11,7 @@ const config = {
         options: {},
     },
 
-    staticDirs: ["../public"],
+    staticDirs: ["../public", "../src/locales"],
 
     webpackFinal: async (config) => {
         config.module.rules.push({

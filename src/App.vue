@@ -10,19 +10,7 @@
     </div>
 </template>
 
-<script>
-import Profile from "./components/Profile.vue";
+<script setup>
+import Profile from "./components/profile/Profile.vue";
 import NavBar from "./components/nav-bar/NavBar.vue";
-
-export default {
-    name: "App",
-    components: { NavBar, Profile },
-    mounted() {
-        this.$myGlobalVariable.windowWidth = window.innerWidth;
-
-        window.onresize = () => {
-            this.$myGlobalVariable.windowWidth = window.innerWidth;
-        };
-    },
-};
 </script>

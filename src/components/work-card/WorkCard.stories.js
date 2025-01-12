@@ -9,7 +9,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: "Component used in portfolio grid for thumbnails and information about works",
+                component: "Component used for thumbnails and information about works",
             },
         },
     },

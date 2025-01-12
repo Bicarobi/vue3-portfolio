@@ -9,6 +9,13 @@ export default {
     title: "Components/AboutCard",
     component: [AboutCard, WebDevIcon],
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "Component used to show more information about skills",
+            },
+        },
+    },
     argTypes: {
         type: { control: "text" },
         desc: { control: "text" },

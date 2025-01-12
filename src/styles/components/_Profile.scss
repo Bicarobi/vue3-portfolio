@@ -1,251 +1,251 @@
 .profile-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-	height: 100%;
+    height: 100%;
 
-	> .grid-container {
-		display: grid;
-		grid-template-columns: 100% 10px;
-		grid-template-rows: auto;
-		grid-template-areas: "left-side right-side";
-		justify-items: end;
+    > .grid-container {
+        display: grid;
+        grid-template-columns: 100% 10px;
+        grid-template-rows: auto;
+        grid-template-areas: "left-side right-side";
+        justify-items: end;
 
-		height: 100%;
+        height: 100%;
 
-		/* @media #{$mobile} {
+        /* @media #{$mobile} {
 			overflow: hidden;
 		} */
 
-		> .grid-left-side {
-			grid-area: left-side;
-			width: 100%;
+        > .grid-left-side {
+            grid-area: left-side;
+            width: 100%;
 
-			margin: auto 0;
+            margin: auto 0;
 
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
 
-			> .grid-container {
-				display: grid;
-				grid-template-columns: 1fr;
-				grid-template-rows: auto;
-				grid-template-areas: "left-side" "right-side";
-				justify-items: end;
+            > .grid-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: "left-side" "right-side";
+                justify-items: end;
 
-				height: 100%;
+                height: 100%;
 
-				@media #{$mobile} {
-					grid-template-columns: 1fr 2fr;
-					grid-template-areas: "left-side right-side";
-					padding: 10px 0;
-				}
+                @media #{$mobile} {
+                    grid-template-columns: 1fr 2fr;
+                    grid-template-areas: "left-side right-side";
+                    padding: 10px 0;
+                }
 
-				> .grid-left-side {
-					grid-area: left-side;
+                > .grid-left-side {
+                    grid-area: left-side;
 
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
 
-					margin-left: 0px;
+                    margin-left: 0px;
 
-					@media #{$mobile} {
-						margin-left: 15px;
-					}
+                    @media #{$mobile} {
+                        margin-left: 15px;
+                    }
 
-					> a {
-						display: flex;
-						justify-content: center;
+                    > a {
+                        display: flex;
+                        justify-content: center;
 
-						> img {
-							width: 50%;
-							height: auto;
-							border-radius: 25px;
-							cursor: pointer;
-							aspect-ratio: 1 / 1;
-							object-fit: cover;
+                        > img {
+                            width: 50%;
+                            height: auto;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            aspect-ratio: 1 / 1;
+                            object-fit: cover;
 
-							@media #{$mobile} {
-								width: 100%;
-								margin: 0;
-							}
-						}
-					}
-				}
+                            @media #{$mobile} {
+                                width: 100%;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
 
-				> .grid-right-side {
-					grid-area: right-side;
+                > .grid-right-side {
+                    grid-area: right-side;
 
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
 
-					@media #{$mobile} {
-						padding: 0 10px;
-						gap: 10px;
-						justify-content: space-around;
-					}
+                    @media #{$mobile} {
+                        padding: 0 10px;
+                        gap: 10px;
+                        justify-content: space-around;
+                    }
 
-					> .name {
-						font-size: 30px;
-						text-align: center;
-						font-weight: bold;
-						color: var(--color1);
-						margin: 20px 0;
+                    > .name {
+                        font-size: 30px;
+                        text-align: center;
+                        font-weight: bold;
+                        color: var(--color1);
+                        margin: 20px 0;
 
-						@media #{$tablet} {
-							padding: 0 10px;
-						}
+                        @media #{$tablet} {
+                            padding: 0 10px;
+                        }
 
-						@media #{$mobile} {
-							margin: 0;
-							font-size: 7vw;
-							justify-content: space-around;
-						}
-					}
+                        @media #{$mobile} {
+                            margin: 0;
+                            font-size: 7vw;
+                            justify-content: space-around;
+                        }
+                    }
 
-					> .tag-container {
-						width: 80%;
+                    > .tag-container {
+                        width: 80%;
 
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						flex-direction: row;
-						flex-wrap: wrap;
-						gap: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        gap: 5px;
 
-						margin: 20px 0 0 0;
+                        margin: 20px 0 0 0;
 
-						@media #{$mobile} {
-							width: 100%;
-							margin: 0;
-						}
+                        @media #{$mobile} {
+                            width: 100%;
+                            margin: 0;
+                        }
 
-						> a {
-							text-decoration: none;
+                        > a {
+                            text-decoration: none;
 
-							> .tag {
-								width: max-content;
+                            > .tag {
+                                width: max-content;
 
-								color: var(--color1);
-								padding: 10px 15px;
-								margin: 0;
+                                color: var(--color1);
+                                padding: 10px 15px;
+                                margin: 0;
 
-								font-size: 16px;
-								text-align: center;
+                                font-size: 16px;
+                                text-align: center;
 
-								border-radius: 20px;
-								background-color: var(--color5);
-								/* box-shadow: #171717 0px 4px 6px 0px; */
+                                border-radius: 20px;
+                                background-color: var(--color5);
+                                /* box-shadow: #171717 0px 4px 6px 0px; */
 
-								text-decoration: none;
+                                text-decoration: none;
 
-								@media #{$mobile} {
-									font-size: 3vw;
-									background-color: var(--color14);
-								}
-							}
-						}
-					}
-				}
-			}
+                                @media #{$mobile} {
+                                    font-size: 3vw;
+                                    background-color: var(--color14);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-			> .profile-info-container {
-				margin: auto 0;
+            > .profile-info-container {
+                margin: auto 0;
 
-				display: flex;
-				flex-direction: column;
-				flex-wrap: wrap;
-				align-items: center;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
 
-				width: 100%;
+                width: 100%;
 
-				> .title {
-					font-size: 0.8em;
-					color: $yellow;
-					/* color: #727272; */
-					text-decoration: none;
-					margin: 0;
-				}
+                > .title {
+                    font-size: 0.8em;
+                    color: $yellow;
+                    /* color: #727272; */
+                    text-decoration: none;
+                    margin: 0;
+                }
 
-				> .line {
-					width: 80%;
-					margin: 20px 0;
-					border: 1px solid var(--color5);
-					border-radius: 1px;
+                > .line {
+                    width: 80%;
+                    margin: 20px 0;
+                    border: 1px solid var(--color5);
+                    border-radius: 1px;
 
-					@media #{$mobile} {
-						border: 1px solid var(--color14);
-					}
-				}
+                    @media #{$mobile} {
+                        border: 1px solid var(--color14);
+                    }
+                }
 
-				> .info-container {
-					width: 70%;
+                > .info-container {
+                    width: 70%;
 
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-					flex-wrap: wrap;
-					gap: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 10px;
 
-					margin: 0;
+                    margin: 0;
 
-					@media #{$mobile} {
-						width: fit-content;
-					}
-				}
+                    @media #{$mobile} {
+                        width: fit-content;
+                    }
+                }
 
-				> .social-container {
-					width: 70%;
+                > .social-container {
+                    width: 70%;
 
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: row;
-					gap: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: 10px;
 
-					margin: 0 0 20px 0;
-				}
-			}
+                    margin: 0 0 20px 0;
+                }
+            }
 
-			> .profile-button-container {
-				margin: 0;
-			}
-		}
+            > .profile-button-container {
+                margin: 0;
+            }
+        }
 
-		> .grid-right-side {
-			grid-area: right-side;
-			width: fit-content;
+        > .grid-right-side {
+            grid-area: right-side;
+            width: fit-content;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-			@media #{$mobile} {
-				display: none;
-			}
+            @media #{$mobile} {
+                display: none;
+            }
 
-			> .line {
-				height: 90%;
-				width: 0;
-				margin: auto 0;
-				border: 1px solid var(--color5);
-				border-radius: 1px;
+            > .line {
+                height: 90%;
+                width: 0;
+                margin: auto 0;
+                border: 1px solid var(--color5);
+                border-radius: 1px;
 
-				@media #{$mobile} {
-					border: 1px solid var(--color14);
-				}
-			}
-		}
-	}
+                @media #{$mobile} {
+                    border: 1px solid var(--color14);
+                }
+            }
+        }
+    }
 }
 
 /*  > .rainbow {
@@ -279,7 +279,7 @@
 } */
 
 @keyframes rotate {
-	100% {
-		transform: rotate(1turn);
-	}
+    100% {
+        transform: rotate(1turn);
+    }
 }

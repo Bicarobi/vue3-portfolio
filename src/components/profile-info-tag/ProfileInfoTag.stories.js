@@ -9,6 +9,13 @@ export default {
     title: "Components/ProfileInfoTag",
     component: [ProfileInfoTag, EmailIcon],
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "Component used to show contact information",
+            },
+        },
+    },
     argTypes: {
         type: { control: "text" },
         description: { control: "text" },

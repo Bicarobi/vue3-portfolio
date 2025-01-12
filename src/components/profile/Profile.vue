@@ -7,19 +7,19 @@
                         <router-link :to="{ name: 'about' }"><img src="/assets/profile-image-4.jpg" /></router-link>
                     </div>
                     <div class="grid-right-side">
-                        <div class="name">Robert Cmrečki</div>
+                        <div class="name" data-test="name">Robert Cmrečki</div>
 
                         <div class="tag-container">
-                            <router-link :to="{ name: 'portfolio', params: { filter: 'web-dev' } }"
+                            <router-link :to="{ name: 'portfolio' }" @click="callChangeFilter('web-dev')"
                                 ><div class="tag">{{ $t("profile.skills.webDev") }}</div></router-link
                             >
-                            <router-link :to="{ name: 'portfolio', params: { filter: 'web-design' } }"
+                            <router-link :to="{ name: 'portfolio' }" @click="callChangeFilter('web-design')"
                                 ><div class="tag">{{ $t("profile.skills.webDesign") }}</div></router-link
                             >
-                            <router-link :to="{ name: 'portfolio', params: { filter: '3d-design' } }"
+                            <router-link :to="{ name: 'portfolio' }" @click="callChangeFilter('3d-design')"
                                 ><div class="tag">{{ $t("profile.skills.design3D") }}</div></router-link
                             >
-                            <router-link :to="{ name: 'portfolio', params: { filter: 'graphic-design' } }"
+                            <router-link :to="{ name: 'portfolio' }" @click="callChangeFilter('graphic-design')"
                                 ><div class="tag">{{ $t("profile.skills.graphicDesign") }}</div></router-link
                             >
                             <!-- <router-link :to="{ name: 'portfolio', params: { filter: 'photography' } }"><div class="tag">Photographer</div></router-link> -->
@@ -28,11 +28,11 @@
                 </div>
 
                 <!-- <a class="title" href="https://urn.nsk.hr/urn:nbn:hr:122:388921"><h3>bacc. ing. techn. graph.</h3></a> -->
-                <div class="profile-info-container" :style="{ display: openedProfile || $myGlobalVariable.windowWidth > $myGlobalVariable.mobileWindowWidth ? 'flex' : 'none' }">
+                <div class="profile-info-container" :style="{ display: openedProfile || windowWidth > mobileWindowWidth ? 'flex' : 'none' }">
                     <hr class="line" />
 
                     <div class="info-container">
-                        <ProfileInfoTag v-for="tag in processedTags" :key="tag.type" :type="tag.type" :description="tag.description" :link="tag.link">
+                        <ProfileInfoTag v-for="tag in processedTags" :key="tag.type" v-bind="tag">
                             <component :is="tag.image" />
                         </ProfileInfoTag>
                     </div>
@@ -43,7 +43,7 @@
                         <a href="https://www.instagram.com/ro2tsa/" target="_blank"><InstagramIcon /></a>
                     </div>
                 </div>
-                <div class="profile-button-container" :style="{ display: $myGlobalVariable.windowWidth <= $myGlobalVariable.mobileWindowWidth ? 'block' : 'none' }">
+                <div class="profile-button-container" :style="{ display: windowWidth <= mobileWindowWidth ? 'block' : 'none' }">
                     <ProfileButtonIcon @click="openProfile" :openedProfile="openedProfile" />
                 </div>
             </div>
@@ -55,21 +55,31 @@
 </template>
 
 <script setup>
-import { ref, computed, onBeforeMount } from "vue";
+import { ref, computed, onBeforeMount, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
-import ProfileInfoTag from "./profile-info-tag/ProfileInfoTag.vue";
-import EmailIcon from "./svgs/EmailIcon.vue";
-import PhoneIcon from "./svgs/PhoneIcon.vue";
-import LocationIcon from "./svgs/LocationIcon.vue";
-import LinkedInIcon from "./svgs/LinkedInIcon.vue";
-import GitHubIcon from "./svgs/GitHubIcon.vue";
-import InstagramIcon from "./svgs/InstagramIcon.vue";
-import ProfileButtonIcon from "./svgs/ProfileButtonIcon.vue";
+import { useFilterStore } from "@/stores/filter";
+
+import ProfileInfoTag from "../profile-info-tag/ProfileInfoTag.vue";
+import EmailIcon from "../svgs/EmailIcon.vue";
+import PhoneIcon from "../svgs/PhoneIcon.vue";
+import LocationIcon from "../svgs/LocationIcon.vue";
+import LinkedInIcon from "../svgs/LinkedInIcon.vue";
+import GitHubIcon from "../svgs/GitHubIcon.vue";
+import InstagramIcon from "../svgs/InstagramIcon.vue";
+import ProfileButtonIcon from "../svgs/ProfileButtonIcon.vue";
 
 const { t } = useI18n({});
 
 const openedProfile = ref(true);
+const windowWidth = ref(null);
+const mobileWindowWidth = ref(700);
+const filterStore = useFilterStore();
+
+// Method to change the filter value
+const callChangeFilter = (value) => {
+    filterStore.changeFilter(value);
+};
 
 const processedTags = computed(() => {
     const tags = [
@@ -111,12 +121,16 @@ function openProfile() {
     openedProfile.value = !openedProfile.value;
 }
 
+onMounted(() => {
+    windowWidth.value = window.innerWidth;
+
+    window.onresize = () => {
+        windowWidth.value = window.innerWidth;
+    };
+});
+
 onBeforeMount(() => {
-    if (localStorage.openedProfile === "enabled") {
-        openedProfile.value = true;
-    } else {
-        openedProfile.value = false;
-    }
+    openedProfile.value = localStorage.openedProfile === "enabled";
     openProfile();
 });
 </script>

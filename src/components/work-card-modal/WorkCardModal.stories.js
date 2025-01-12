@@ -8,7 +8,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: "Modal component used in portfolio which shows more information about clicked Work Card component",
+                component: "Modal component which shows more information about clicked Work Card component",
             },
         },
     },

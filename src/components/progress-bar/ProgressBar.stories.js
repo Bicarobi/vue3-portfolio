@@ -7,6 +7,13 @@ export default {
     title: "Components/ProgressBar",
     component: [ProgressBar],
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "Component used to show progress bar with relative percentage about skills",
+            },
+        },
+    },
     argTypes: {
         type: { control: "text" },
         percentage: { control: "text" },

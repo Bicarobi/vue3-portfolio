@@ -5,7 +5,7 @@
             <hr class="nav-line" />
         </div>
         <div class="type-container">
-            <div v-for="tag in filters" :key="tag" @click="changeFilter(tag[0])" class="filter" :class="{ active: filter == tag[0] }">{{ $t("portfolioView.skills." + tag[1]) }}</div>
+            <div v-for="tag in filters" :key="tag" @click="callChangeFilter(tag[0])" class="filter" :class="{ active: filterStore.filterValue == tag[0] }">{{ $t("portfolioView.skills." + tag[1]) }}</div>
         </div>
         <hr class="line" />
         <div class="works-container">
@@ -21,15 +21,17 @@ import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
+import { useFilterStore } from "@/stores/filter";
+
 import WorkCard from "@/components/work-card/WorkCard.vue";
 import WorkCardModal from "@/components/work-card-modal/WorkCardModal.vue";
 
 const route = useRoute();
 const { t } = useI18n({});
+const filterStore = useFilterStore();
 
 const selectedWork = ref(null);
 const isModalVisible = ref(false);
-const filter = ref(null);
 const filters = ref([
     [null, "all"],
     ["web-dev", "webDev"],
@@ -51,13 +53,13 @@ const closeModal = () => {
     isModalVisible.value = false;
 };
 
-const changeFilter = (value) => {
-    filter.value = value;
+const callChangeFilter = (value) => {
+    filterStore.changeFilter(value);
 };
 
 const filterWorks = (processedWorks) => {
-    if (filter.value) {
-        return processedWorks.filter((work) => work.filter == filter.value);
+    if (filterStore.filterValue) {
+        return processedWorks.filter((work) => work.filter == filterStore.filterValue);
     }
     return processedWorks;
 };

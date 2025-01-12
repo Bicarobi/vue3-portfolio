@@ -7,6 +7,13 @@ export default {
     title: "Components/ResumeInfo",
     component: [ResumeInfo],
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "Component used to show more information about education and work experience",
+            },
+        },
+    },
     argTypes: {
         title: { control: "text" },
         time: { control: "text" },
